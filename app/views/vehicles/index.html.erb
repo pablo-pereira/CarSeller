@@ -1,0 +1,29 @@
+<h1>Listing vehicles</h1>
+
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Marca</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Cliente</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <% @vehicles.each do |vehicle| %>
+  <tr class=" vehicle <%#= cycle :success, :error, :warning, :info %> ">
+    <%= formato(vehicle) %>
+    <td><%= vehicle.customer.name %></td>
+    <td><%= link_to 'Show', vehicle %></td>
+    <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+    <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-primary'%></td>
+  </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to icon('plus')+'New Vehicle', new_vehicle_path, class: 'btn' %>
