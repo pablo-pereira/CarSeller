@@ -1,0 +1,45 @@
+      <div class="hero-unit">
+        <div class="row">
+          <div class="span8"><h1>Bienvenido!</h1></div>
+        <div class="span4"><p>
+          <%= link_to icon('envelope')+'Contacto', root_url, class: 'btn btn-info' %>
+        </p>
+        </div>
+
+        <%= image_tag('1.jpg') %>
+        </div>
+        <br><br>
+      </div>
+    <div class="container">
+        <ul class="thumbnails">
+          <li class="span3">
+            <h3>Vehiculos</h3>
+            <a href="<%= vehicles_path %>" class="thumbnail">
+              <%= image_tag('4.jpg', :class => "img-polaroid") %>
+              <p>Ver más</p>
+            </a>
+          </li>
+          <li class="span3">
+            <h3>Tipos de vehiculos</h3>
+            <a href="<%= vehicle_types_path %>" class="thumbnail">
+              <%= image_tag('2.jpg', :class => "img-polaroid") %>
+              <p>Ver más</p>
+            </a>
+          </li>
+          <li class="span3">
+            <h3>Marcas</h3>
+            <a href="<%= brands_path %>" class="thumbnail">
+              <%= image_tag('3.jpg', :class => "img-polaroid") %>
+              <p>Ver más</p>
+            </a>
+          </li>
+          <li class="span3">
+            <h3>Clientes</h3>
+            <a href="<%= customers_path %>" class="thumbnail">
+              <%= image_tag('5.jpg', :class => "img-polaroid") %>
+              <p>Ver más</p>
+            </a>
+          </li>
+        </ul>
+
+</div>

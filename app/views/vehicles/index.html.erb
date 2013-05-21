@@ -7,9 +7,10 @@
       <th>Nombre</th>
       <th>Tipo</th>
       <th>Cliente</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Precio</th>
+      <th>Kilometraje</th>
+      <th>Modelo</th>
+      <th>Tipo Combustible</th>
     </tr>
   </thead>
 
@@ -17,6 +18,10 @@
   <tr class=" vehicle <%#= cycle :success, :error, :warning, :info %> ">
     <%= formato(vehicle) %>
     <td><%= vehicle.customer.name %></td>
+    <td><%= vehicle.price %></td>
+    <td><%= vehicle.milleage %></td>
+    <td><%= vehicle.year %></td>
+    <td><%= vehicle.fuel_type %></td>
     <td><%= link_to 'Show', vehicle %></td>
     <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
     <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-primary'%></td>
