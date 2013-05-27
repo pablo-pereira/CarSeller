@@ -9,8 +9,13 @@ class Vehicle < ActiveRecord::Base
   validates :milleage, :numericality => true, :allow_blank => true
 
 #metodo que devuelve nombre completo
-  def full_name
-    "#{brand.name} - #{name} (#{vehicle_type.name})"    
-  end
+def full_name
+  "#{brand.name} - #{name} (#{vehicle_type.name})"    
+end
+
+def amount_in_pesos #metodo para cambiar en pesos
+  d=Dollar.find(:first, :params => {:dollar_type => 1})
+  ((price || 0) * d.buyer).to_s
+end
 
 end

@@ -1,45 +1,87 @@
-      <div class="hero-unit">
-        <div class="row">
-          <div class="span8"><h1>Bienvenido!</h1></div>
-        <div class="span4"><p>
-          <%= link_to icon('envelope')+'Contacto', root_url, class: 'btn btn-info' %>
-        </p>
+        <div class="hero-unit">
+          <div class="row">
+            <div class="span8">
+              <h1>Bienvenido!</h1>
+            </div>
+            <div class="span4">
+              <p><%= link_to icon('envelope')+'Contacto', root_url, class: 'btn btn-info' %>
+              </p>            
+            </div>
+          </div>  
+          <div class="row">
+            <div class="span12"><%= image_tag('1.jpg') %>
+            </div>
+          </div> 
         </div>
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+              <ul class="thumbnails">
+                <li class="span3">
+                  <h3>Vehiculos</h3>
+                  <a href="<%= vehicles_path %>" class="thumbnail">
+                    <%= image_tag('4.jpg', :class => "img-polaroid") %>
+                    <p>Ver más</p>
+                  </a>
+                </li>
+                <li class="span3">
+                  <h3>Tipos de vehiculos</h3>
+                  <a href="<%= vehicle_types_path %>" class="thumbnail">
+                    <%= image_tag('2.jpg', :class => "img-polaroid") %>
+                    <p>Ver más</p>
+                  </a>
+                </li>
+                <li class="span3">
+                  <h3>Marcas</h3>
+                  <a href="<%= brands_path %>" class="thumbnail">
+                    <%= image_tag('3.jpg', :class => "img-polaroid") %>
+                    <p>Ver más</p>
+                  </a>
+                </li>
+                <li class="span3">
+                  <h3>Clientes</h3>
+                  <a href="<%= customers_path %>" class="thumbnail">
+                    <%= image_tag('5.jpg', :class => "img-polaroid") %>
+                    <p>Ver más</p>
+                  </a>
+                </li>
+                <li class="span6">
+                 <table class="table table-hover table-striped">
+                  <tr>
+                    <th><h4> Dollar of. venta</h4></th>
+                    <th><h4> Dollar of. compra</h4></th>
+                    <th><h4> Dollar blue venta</h4> </th>
+                    <th><h4> Dollar blue venta</h4></th>
+                  </tr>
 
-        <%= image_tag('1.jpg') %>
-        </div>
-        <br><br>
-      </div>
-    <div class="container">
-        <ul class="thumbnails">
-          <li class="span3">
-            <h3>Vehiculos</h3>
-            <a href="<%= vehicles_path %>" class="thumbnail">
-              <%= image_tag('4.jpg', :class => "img-polaroid") %>
-              <p>Ver más</p>
-            </a>
-          </li>
-          <li class="span3">
-            <h3>Tipos de vehiculos</h3>
-            <a href="<%= vehicle_types_path %>" class="thumbnail">
-              <%= image_tag('2.jpg', :class => "img-polaroid") %>
-              <p>Ver más</p>
-            </a>
-          </li>
-          <li class="span3">
-            <h3>Marcas</h3>
-            <a href="<%= brands_path %>" class="thumbnail">
-              <%= image_tag('3.jpg', :class => "img-polaroid") %>
-              <p>Ver más</p>
-            </a>
-          </li>
-          <li class="span3">
-            <h3>Clientes</h3>
-            <a href="<%= customers_path %>" class="thumbnail">
-              <%= image_tag('5.jpg', :class => "img-polaroid") %>
-              <p>Ver más</p>
-            </a>
-          </li>
-        </ul>
+                  <tr>
+                    <td><%=dollar_oficial_venta%></td>
+                    <td> <%=dollar_oficial_compra%></td>
+                    <td><%=dollar_blue_venta%></td>
+                    <td><%=dollar_blue_compra%></td>
+                  </tr>
+                </table>
+              </li>
+              <li class="span6">
+               <table class="table table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th>Accesorio</th>
+                    <th>Precio</th>      
+                  </tr>
+                </thead>
 
-</div>
+                <% Accesory.all.each do |accesory| %>
+                <tr>
+                 <td><%= accesory.name -%></td>              
+                 <td><%= accesory.price -%></td>
+               </tr>
+               <% end %>
+             </table>
+           </li>
+
+         </ul>
+
+       </div>
+     </div>
+   </div>
